@@ -1,7 +1,8 @@
 # Droid Management Platform
 
 O Droid Management Platform é uma solução completa para o gerenciamento de droids, incluindo uma API robusta, CI/CD com Docker e Kubernetes, e uma interface de usuário baseada em React para facilitar o controle e monitoramento dos seus droids.
-Características
+
+## Características
 
     API de Gerenciamento de Droids: Uma API RESTful construída com FastAPI para gerenciar todas as operações relacionadas aos droids, como adição, remoção, atualização e consulta de informações.
 
