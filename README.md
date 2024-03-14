@@ -4,58 +4,61 @@ O Droid Management Platform é uma solução completa para o gerenciamento de dr
 
 ## Características
 
-    API de Gerenciamento de Droids: Uma API RESTful construída com FastAPI para gerenciar todas as operações relacionadas aos droids, como adição, remoção, atualização e consulta de informações.
+- **API de Gerenciamento de Droids:** Uma API RESTful construída com FastAPI para gerenciar todas as operações relacionadas aos droids, como adição, remoção, atualização e consulta de informações.
 
-    CI/CD com Docker e Kubernetes: Integração contínua e implantação contínua usando Docker para empacotar o aplicativo e Kubernetes para orquestrar e gerenciar os contêineres em escala.
+- **CI/CD com Docker e Kubernetes:** Integração contínua e implantação contínua usando Docker para empacotar o aplicativo e Kubernetes para orquestrar e gerenciar os contêineres em escala.
 
-    Frontend em React: Uma interface de usuário moderna e responsiva construída com React para interagir com a API e visualizar dados sobre os droids.
+- **Frontend em React:** Uma interface de usuário moderna e responsiva construída com React para interagir com a API e visualizar dados sobre os droids.
 
 ## Como Usar
-Pré-requisitos
 
-    Python 3.x
-    Docker
-    Kubernetes
+### Pré-requisitos
 
-## Configuração
+- Python 3.x
+- Docker
+- Kubernetes
 
-    Clone este repositório:
+### Configuração
 
-bash
+1. Clone este repositório:
 
-git clone https://github.com/seu-usuario/droid-management-platform.git
+    ```bash
+    git clone https://github.com/seu-usuario/droid-management-platform.git
+    ```
 
-    Navegue até o diretório do projeto:
+2. Navegue até o diretório do projeto:
 
-bash
+    ```bash
+    cd droid-management-platform
+    ```
 
-cd droid-management-platform
+3. Instale as dependências do Python:
 
-    Instale as dependências do Python:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-pip install -r requirements.txt
+### Execução
 
-## Execução
+1. Inicie a API de Gerenciamento de Droids:
 
-    Inicie a API de Gerenciamento de Droids:
+    ```bash
+    uvicorn main:app --reload
+    ```
 
-css
+2. Inicie o frontend React (substitua <endereço-da-api> pelo endereço onde a API está sendo executada):
 
-uvicorn main:app --reload
+    ```bash
+    cd frontend
+    npm install
+    REACT_APP_API_URL=http://<endereço-da-api> npm start
+    ```
 
-    Inicie o frontend React (substitua <endereço-da-api> pelo endereço onde a API está sendo executada):
+3. Acesse o frontend em seu navegador:
 
-arduino
-
-cd frontend
-npm install
-REACT_APP_API_URL=http://<endereço-da-api> npm start
-
-    Acesse o frontend em seu navegador:
-
-arduino
-
-http://localhost:3000
+    ```
+    http://localhost:3000
+    ```
 
 ## Contribuição
 
