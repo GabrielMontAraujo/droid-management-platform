@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from droids import Droid
 
 app = FastAPI()
 
@@ -12,10 +13,17 @@ droids = {
 def home():
     return droids 
 
-@app.get("droids/{id_droid}")
+@app.get("/droids/{id_droid}")
 def list_droid(id_droid: int):
     if id_droid in droids:
         return droids[id_droid]
     else:
         return "this droid doesn't exist"
-    
+
+
+@app.post("/droids/")
+def create_droid(droid: Droid):  
+    new_id = max(droids.keys()) + 1
+    droids[new_id] = droid.dict()  
+    return {"message": "Droid created successfully", "droid_id": new_id}
+
