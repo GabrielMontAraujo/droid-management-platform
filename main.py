@@ -5,8 +5,8 @@ app = FastAPI()
 
 droids = {
     1: {"model": "HBA", "type": "happy", "job": "analist", "status": "active"},
-    2:{"model": "HBO", "type": "obedient", "job": "guard", "status": "active"},
-    3:{"model": "HBX", "type": "drunk", "job": "barman", "status": "active"},
+    2: {"model": "HBO", "type": "obedient", "job": "guard", "status": "active"},
+    3: {"model": "HBX", "type": "drunk", "job": "barman", "status": "active"},
 }
 
 @app.get("/")
@@ -36,6 +36,14 @@ def update_droid(id_droid: int, droid: Droid):
     if id_droid in droids:
         droids[id_droid] = droid.dict()
         return {"message": f"Droid with ID {id_droid} updated successfully"}, status.HTTP_200_OK
+    else:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Droid not found")
+    
+@app.delete("/droids/{id_droid}")
+def delete_droid(id_droid: int):
+    if id_droid in droids:
+        del droids[id_droid]
+        return {"message": f"Droid with ID {id_droid} deleted successfully"}, status.HTTP_200_OK
     else:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Droid not found")
 
